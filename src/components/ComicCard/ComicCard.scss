@@ -1,0 +1,34 @@
+@use "../../styles/variables" as vr;
+@use "../../styles/mixins";
+
+.card{
+    height: 450px;
+    overflow: hidden;
+    border: 1px solid vr.$yellowFont;
+    margin: 20px;
+    border-radius: 8px;
+    background-color: vr.$bg-second;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    object-fit: cover;
+    .coverCard{
+        border-radius: 8px 8px 0 0;
+        object-fit: cover;
+        width: 100%;
+        height: 400px;
+        @extend %flex-center;
+        img{
+           width: 100%;       
+            height: 100%;         
+            object-fit: cover;     
+            display: block;
+        }
+    }
+    .cardTitle{
+        @extend %flex-center;
+        height: 100px;
+        margin: 0;
+        color: aliceblue;
+    }
+}

@@ -1,0 +1,12 @@
+@use "../../styles/variables" as vr;
+@use "../../styles/mixins";
+
+footer{
+    background-color: vr.$bg-second;
+    color: vr.$yellowFont;
+    @extend %flex-center;
+    height: 60px;
+    width: 100%;
+    font-family: vr.$f-bangers;
+    font-size: 1.2rem;
+}

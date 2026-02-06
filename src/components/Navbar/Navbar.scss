@@ -1,7 +1,10 @@
+@use "../../styles/variables" as vr;
+@use "../../styles/mixins";
+
 .navbar{
-    background-color: #8B0000;
+    background-color: vr.$bg-second;
     width: 100%;
-    height: 100px;
+    height: var(--nav-height);
     position: fixed;
     top: 0;
     left: 0;
@@ -24,19 +27,21 @@
         padding: 0;
         .menu-item{
             width: 150px;
+            &:has(.active){
+                box-shadow: inset 0 -3px 0 0 vr.$yellowFont;
+            }
             .link{
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                @extend %flex-center;
                 width: 100%;
                 height: 100%;
                 text-decoration: none;
                 font-size: 1.6rem;
-                color: goldenrod;
-                font-family: "Bangers", system-ui;
+                color: vr.$yellowFont;
+                font-family: vr.$f-bangers;
                 font-weight: 400;
                 font-style: normal;
                 transition: all ease-in 0.15s;
+
                 &:hover{
                     transform: scale(1.25);
                 }

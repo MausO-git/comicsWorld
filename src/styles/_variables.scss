@@ -1,0 +1,14 @@
+$yellowFont: goldenrod;
+$bg-second: #8B0000;
+$f-bangers: "Bangers", system-ui;
+$navHeight: 100px;
+
+:root{
+    --nav-height: 100px;
+}
+
+@media all and (max-width:1000px){
+   :root{
+    --nav-height: 60px;
+   }
+}

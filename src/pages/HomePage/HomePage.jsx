@@ -11,7 +11,6 @@ const HomePage = () => {
         try {
             const datas = await marvelAPI.demoHome()
             setIssues(datas.data.items)
-            console.log(issues)
         } catch (error) {
             console.error("Une erreur est survenue au niveau de l'API", error)
         }
@@ -23,10 +22,11 @@ const HomePage = () => {
     return ( 
         <>
             <div className="page">
+                <h1>Les derniers ajouts</h1>
                 <div className="grid">
                     {issues.map(issue => (
-                        <NavLink to={`/comics/${issue.id}`}>
-                            <ComicCard className="grid-item" key={issue.id} id={issue.id} title={issue.title} />
+                        <NavLink to={`/comics/${issue.id}`} key={issue.id}>
+                            <ComicCard className="grid-item" id={issue.id} title={issue.title} />
                         </NavLink>
                     ))}
                 </div>

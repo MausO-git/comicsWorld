@@ -5,7 +5,15 @@ $navHeight: 100px;
 
 :root{
     --nav-height: 100px;
+    --wrapper-width: 75%;
 }
+
+@media all and (max-width:1600px){
+    :root{
+        --wrapper-width: 85%;
+    }
+}
+
 
 @media all and (max-width:1000px){
    :root{

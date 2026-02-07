@@ -12,6 +12,7 @@
     align-items: center;
     flex-direction: column;
     object-fit: cover;
+    transition: all 0.2s;
     .coverCard{
         border-radius: 8px 8px 0 0;
         object-fit: cover;
@@ -30,5 +31,9 @@
         height: 100px;
         margin: 0;
         color: aliceblue;
+    }
+    &:hover{
+        filter: drop-shadow(vr.$yellowFont 0 0 6px);
+        transform: scale(1.03);
     }
 }

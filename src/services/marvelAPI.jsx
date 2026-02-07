@@ -12,7 +12,6 @@ function findIssue(id){
 }
 
 function demoHome(){
-    console.log(`${ISSUES_API}?limit=3`)
     return Axios.get(`${ISSUES_API}?limit=3`)
 }
 

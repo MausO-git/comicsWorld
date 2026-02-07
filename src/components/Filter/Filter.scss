@@ -1,0 +1,36 @@
+.filter {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  .filter-form {
+    width: 100%;
+    max-width: 400px; // Largeur confortable pour la recherche
+    padding: 12px 20px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #1a1a1a; // Gris très foncé
+    border: 2px solid #333; // Bordure discrète par défaut
+    border-radius: 50px; // Forme pilule très moderne
+    transition: all 0.3s ease-in-out;
+    outline: none;
+
+    &::placeholder {
+      color: #666;
+      font-style: italic;
+    }
+
+    // Effet au survol
+    &:hover {
+      border-color: #555;
+    }
+
+    // Effet quand on clique dedans (Focus)
+    &:focus {
+      border-color: #ed1d24; // Rouge Marvel
+      background-color: #000000;
+      box-shadow: 0 0 10px rgba(237, 29, 36, 0.3); // Halo rouge léger
+    }
+  }
+}

@@ -14,6 +14,9 @@ const AllComics = () => {
     const [loading, setLoading] = useState(true)
     const itemsPerPage = 15;
 
+    /**
+     * Charge tous les comics
+     */
     const fetchIssues = async () => {
         try {
             const datas = await marvelAPI.findAll();
@@ -24,6 +27,10 @@ const AllComics = () => {
         }
     }
 
+    /**
+     * Gère le changement de page
+     * @param {*} page 
+     */
     const handlePageChange = (page) => {
         setCurrentPage(page)
     }
@@ -32,12 +39,19 @@ const AllComics = () => {
         fetchIssues()
     },[])
 
+    /**
+     * Change la valeur de la recherche
+     * @param {*} event 
+     */
     const handleSearch = (event) => {
         const value = event.currentTarget.value;
         setSearch(value)
         setCurrentPage(1)
     }
 
+    /**
+     * Utilise la valeur de la recherche pour filtrer les comics à afficher en fonction de leur titre
+     */
     const filteredIssues = issues.filter(i =>
         i.title.toLowerCase().includes(search.toLowerCase())
     )

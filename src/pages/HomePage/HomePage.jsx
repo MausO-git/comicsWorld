@@ -9,6 +9,9 @@ const HomePage = () => {
     const [issues, setIssues] = useState([]);
     const [loading, setLoading] = useState(true)
 
+    /**
+     * Charge les trois derniers comics ajoutés
+     */
     const fetchDemo = async () => {
         try {
             const datas = await marvelAPI.demoHome();

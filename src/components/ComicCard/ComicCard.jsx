@@ -13,6 +13,9 @@ const ComicCard = (props) => {
         rootMargin: '200px 0px'
     })
 
+    /**
+     * Charge les cover des comics seulement si les comics apparaissent à l'écran
+     */
     useEffect(() => {
         if(inView && !details){
             const fetchDetails = async () => {

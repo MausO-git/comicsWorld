@@ -1,6 +1,10 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
+/**
+ * Force la valeur du scroll à zéro lors du changement de page
+ * @returns 
+ */
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 

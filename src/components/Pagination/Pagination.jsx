@@ -10,6 +10,10 @@ const Pagination = (props) => {
         setInputPage(props.currentPage);
     }, [props.currentPage])
 
+    /**
+     * Prépare la valeur de la page pour le changement de page à venir
+     * @param {*} event 
+     */
     const handleInputChange = (event) => {
         const value = event.target.value;
         if(value === '' || /^[0-9\b]+$/.test(value))
@@ -18,6 +22,9 @@ const Pagination = (props) => {
         }
     }
 
+    /**
+     * Change la page lorsque le form est validé
+     */
     const handleInputSubmit = () => {
         let page = parseInt(inputPage);
             //sécurité
@@ -27,6 +34,10 @@ const Pagination = (props) => {
             props.onPageChanged(page)
     }
 
+    /**
+     * Valide le form de changement de page lorsqu'on presse enter
+     * @param {*} event 
+     */
     const handleInputSubmitKey = (event) => {
         if(event.key === 'Enter')
         {

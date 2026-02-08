@@ -5,17 +5,20 @@ import Pagination from "../../components/Pagination/Pagination";
 import ComicCard from "../../components/ComicCard/ComicCard";
 import { NavLink } from "react-router-dom";
 import Filter from "../../components/Filter/Filter";
+import CirleLoader from "../../components/loaders/CircleLoader";
 
 const AllComics = () => {
     const [issues, setIssues] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [search, setSearch] = useState("");
+    const [loading, setLoading] = useState(true)
     const itemsPerPage = 15;
 
     const fetchIssues = async () => {
         try {
-            const datas = await marvelAPI.findAll()
-            setIssues(datas.data.items)
+            const datas = await marvelAPI.findAll();
+            setIssues(datas.data.items);
+            setLoading(false);
         } catch (error) {
             console.error("Une erreur est survenue au niveau de l'API", error)
         }
@@ -49,19 +52,25 @@ const AllComics = () => {
                     search={search}
                     handleSearch={handleSearch}
                 />
-                <div className="grid">
-                    {paginatedIssues.map(issue => (
-                        <NavLink to={`/comics/${issue.id}`} key={issue.id}>
-                            <ComicCard className="grid-item" id={issue.id} title={issue.title} />
-                        </NavLink>
-                    ))}
-                </div>
-                <Pagination 
-                    currentPage = {currentPage}
-                    itemsPerPage = {itemsPerPage}
-                    length = {filteredIssues.length}
-                    onPageChanged={handlePageChange}
-                />
+                {(!loading) ? (
+                    <>
+                        <div className="grid">
+                            {paginatedIssues.map(issue => (
+                                <NavLink to={`/comics/${issue.id}`} key={issue.id}>
+                                    <ComicCard className="grid-item" id={issue.id} title={issue.title} />
+                                </NavLink>
+                            ))}
+                        </div>
+                        <Pagination 
+                            currentPage = {currentPage}
+                            itemsPerPage = {itemsPerPage}
+                            length = {filteredIssues.length}
+                            onPageChanged={handlePageChange}
+                        />
+                    </>
+                ) : (
+                    <CirleLoader />
+                )}
             </div>
         </>
      );

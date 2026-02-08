@@ -5,10 +5,12 @@ import logo from "./logo_comicsworld.png"
 import AllComics from './pages/AllComics/AllComics';
 import Footer from './components/Footer/Footer';
 import Comics from './pages/Comics/Comics';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar 
         logo={logo}
       />

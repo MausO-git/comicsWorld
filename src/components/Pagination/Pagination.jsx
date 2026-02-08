@@ -4,7 +4,6 @@ import "./Pagination.scss";
 const Pagination = (props) => {
 
     const pageCount = Math.ceil(props.length / props.itemsPerPage);
-    console.log(pageCount)
     const [inputPage, setInputPage] = useState(props.currentPage);
 
     useEffect(() => {

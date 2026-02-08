@@ -5,7 +5,7 @@ import Pagination from "../../components/Pagination/Pagination";
 import ComicCard from "../../components/ComicCard/ComicCard";
 import { NavLink } from "react-router-dom";
 import Filter from "../../components/Filter/Filter";
-import CirleLoader from "../../components/loaders/CircleLoader";
+import CirleLoader from "../../components/loaders/CircleLoader/CircleLoader";
 
 const AllComics = () => {
     const [issues, setIssues] = useState([]);

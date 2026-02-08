@@ -1,4 +1,5 @@
 import ContentLoader from "react-content-loader";
+import "./CircleLoader.scss"
 
 const Loader = (props) => {
     return ( 

@@ -1,8 +1,57 @@
+@use "../../styles/mixins";
+@use "../../styles/variables" as vr;
+
 article{
     .content{
         display: flex;
+        gap: 40px;
         .cover{
-            width: 40%;
+            width: 30%;
+            @extend %flex-center;
+            img{
+                height: 500px;
+                filter: drop-shadow(vr.$yellowFont 0 0 4px);
+            }
         }
+        .info{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .c-item{
+                background-color: #020a1772;
+                padding: 10px;
+                border-radius: 1rem;
+                outline: 1px solid vr.$yellowFont;
+                h3{
+                    margin: 0 0 20px;
+                    color: vr.$yellowFont;
+                }
+            }
+            .authors{
+                .author{
+                    display: inline;
+                    .author-name{
+                        display: inline;
+                    }
+                }
+            }
+            .release, .page-number{
+                h3{
+                    margin: 0;
+                }
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+            }
+        }
+
+    }
+}
+
+.back-button{
+    a{
+        display: block;
+        width: fit-content;
+        
     }
 }

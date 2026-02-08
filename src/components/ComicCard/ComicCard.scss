@@ -29,8 +29,11 @@
     .cardTitle{
         @extend %flex-center;
         height: 100px;
+        
         margin: 0;
+        padding: 0 5px;
         color: aliceblue;
+        text-align: center;
     }
     &:hover{
         filter: drop-shadow(vr.$yellowFont 0 0 6px);

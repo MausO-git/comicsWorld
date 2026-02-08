@@ -3,7 +3,7 @@ import marvelAPI from "../../services/marvelAPI";
 import { useEffect, useState } from "react";
 import ComicCard from "../../components/ComicCard/ComicCard";
 import { NavLink } from "react-router-dom";
-import CirleLoader from "../../components/loaders/CircleLoader";
+import CirleLoader from "../../components/loaders/CircleLoader/CircleLoader";
 
 const HomePage = () => {
     const [issues, setIssues] = useState([]);
@@ -25,7 +25,14 @@ const HomePage = () => {
 
     return ( 
         <>
-            <div className="page">
+            <div className="intro">
+                <div className="intro-text wrapper">
+                    <h1>Bienvenue sur ComicsWorld</h1>
+                    <p>Explorez les archives ultimes de l'univers Marvel. Issues, personnages et sagas légendaires à portée de clic.</p>
+                </div>
+                <div className="gradient"></div>
+            </div>
+            <div className="page home">
                 <h1>Les derniers ajouts</h1>
                 {(!loading) ? (
                     <>

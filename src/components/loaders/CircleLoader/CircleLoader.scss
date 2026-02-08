@@ -1,0 +1,7 @@
+@use "../../../styles/mixins";
+
+.circle-loader{
+    padding-top: 15px;
+    width: 100%;
+    @extend %flex-center;
+}

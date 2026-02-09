@@ -2,6 +2,13 @@
 @use "../../styles/variables" as vr;
 
 article{
+    .title{
+        @media all and (max-width: 400px){
+            h1{
+                font-size: 24px;
+            }
+        }
+    }
     .content{
         display: flex;
         gap: 40px;
@@ -44,7 +51,23 @@ article{
                 gap: 1.5rem;
             }
         }
-
+        @media all and (max-width: 1130px) {
+            flex-direction: column;
+            .cover{
+                width: 100%;
+            }
+            .info{
+                gap: 20px;
+                
+            }
+        }
+        @media all and (max-width: 400px){
+            .cover{
+                img{
+                    height: 400px;
+                }
+            }
+        }
     }
 }
 

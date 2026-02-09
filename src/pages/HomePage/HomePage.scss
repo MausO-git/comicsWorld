@@ -18,6 +18,17 @@
         h1,p {
             padding: 0 10px;
         }
+        @media all and (max-width: 530px) {
+            h1{
+                margin: 10px 0;
+            }
+        }
+        @media all and (max-width: 350px) {
+            p{
+                margin: 5px 0;
+            }
+        }
+        
     }
     .gradient{
         background: linear-gradient(
@@ -37,5 +48,11 @@
 .page.home{
     padding: 0;
     min-height: 65vh;
+}
+
+@media all and (max-width: 500px){
+    h1{
+        font-size: 26px;
+    }
 }
 

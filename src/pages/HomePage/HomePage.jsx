@@ -36,16 +36,6 @@ const HomePage = () => {
                 <div className="gradient"></div>
             </div>
             <div className="page home">
-                <div className="presentation">
-                    <h2>Le QG des Fans de Comics</h2>
-                    <p>
-                        <strong>ComicsWorld</strong> est un projet né d'une passion pure pour le 9ème art. Notre mission est simple : offrir aux lecteurs une interface moderne pour explorer l'immensité du multivers <span>Marvel</span>.
-                    </p>
-                    <p>
-                        Que vous cherchiez à suivre les dernières parutions ou à redécouvrir les classiques, nous centralisons les données pour vous. Ici, on code avec la même rigueur que Tony Stark et on lit avec la curiosité de Peter Parker.
-                    </p>
-                    <p>Par les fans, pour les fans.</p>
-                </div>
                 <h1>Les derniers ajouts</h1>
                 {(!loading) ? (
                     <>

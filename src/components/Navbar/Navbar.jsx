@@ -28,6 +28,9 @@ const Navbar = (props) => {
                         <NavLink className="link" to="/">Acceuil</NavLink>
                     </li>
                     <li className="menu-item">
+                        <NavLink className="link" to="/about">À propos</NavLink>
+                    </li>
+                    <li className="menu-item">
                         <NavLink className="link" to="/comics">Comics</NavLink>
                     </li>
                     <li className="menu-item">
@@ -48,6 +51,9 @@ const Navbar = (props) => {
                 <ul className="inMenu">
                     <li className="menu-item">
                         <NavLink className="link" to="/">Acceuil</NavLink>
+                    </li>
+                    <li className="menu-item">
+                        <NavLink className="link" to="/about">À Propos</NavLink>
                     </li>
                     <li className="menu-item">
                         <NavLink className="link" to="/comics">Comics</NavLink>

@@ -5,6 +5,7 @@ import logo from "./logo_comicsworld.png"
 import AllComics from './pages/AllComics/AllComics';
 import Footer from './components/Footer/Footer';
 import Comics from './pages/Comics/Comics';
+import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import NotFound from './pages/NotFound/NotFound';
 import ScrollToTop from './components/ScrollToTop';
@@ -21,6 +22,7 @@ function App() {
           <Route path='/' element={<HomePage />} />
           <Route path='/comics' element={<AllComics />} />
           <Route path='/comics/:id' element={<Comics />} />
+          <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

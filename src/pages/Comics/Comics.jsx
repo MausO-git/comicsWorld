@@ -1,5 +1,5 @@
 import "./Comics.scss"
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useParams, useNavigate } from "react-router-dom";
 import marvelAPI from "../../services/marvelAPI";
 import CirleLoader from "../../components/loaders/CircleLoader/CircleLoader";
 import { useEffect, useState } from "react";
@@ -7,7 +7,8 @@ import moment from "moment";
 
 const Comics = (props) => {
 
-    let {id} = useParams()
+    let {id} = useParams();
+    const navigate = useNavigate(); 
 
     const [issue, setIssue] = useState([])
     const [loading, setLoading] = useState(true)
@@ -19,10 +20,18 @@ const Comics = (props) => {
     const fetchIssue = async (id) => {
         try {
             const datas = await marvelAPI.findIssue(id)
+
+            //sécurité si l'id renvoie un tableau vide
+            if (!datas.data || datas.data.length === 0) {
+                navigate("/404", { replace: true });
+                return;
+            }
+
             setIssue(datas.data)
             setLoading(false)
         } catch (error) {
-            console.error("Une erreur estsurvenue au niveau de l'API", error)
+            console.error("Une erreur estsurvenue au niveau de l'API", error);
+            navigate("/404", { replace: true });
         }
     }
 
